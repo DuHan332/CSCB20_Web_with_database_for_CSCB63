@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"> 
+    <head>
+        <title>CSCB63 courseteam</title>
+        <meta name ="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'css/template.css') }}">
+</head>
+
+<body>
+    {% extends "index.html" %}
+    {% block content  %}
+    <div class="courseteam">
+        <div class="grid-container">
+            
+            <img class="ta-photo" src="{{ url_for('static',filename = 'images/Anna.jpg') }}">
+            <div class="ta-info">
+                <b>Anna Bretscher</b><br>
+                Associate Professor<br>
+                Email: <a href="mailto: anna.bretscher@utoronto.ca" target="_blank">anna.bretscher@utoronto.ca</a><br>
+                Regular Office Hour: Monday 11am to 1pm & Friday 3pm to 6pm
+            </div>
+            <img class="ta-photo" src="{{ url_for('static',filename = 'images/Caroline.jpg') }}">
+            <div class="ta-info">
+                <b>Caroline Channing</b><br>
+                Teaching Assistant<br>
+                Email: <a href="mailto: anna.bretscher@utoronto.ca" target="_blank">caroline.channing@utoronto.ca</a><br>
+                Regular Office Hour: Monday 1pm to 3pm
+            </div>
+            <img class="ta-photo" src="{{ url_for('static',filename = 'images/Elina.jpg') }}">
+            <div class="ta-info">
+                <b>Elina Gilbert</b><br>
+                Teaching Assistant<br>
+                Email: <a href="mailto: anna.bretscher@utoronto.ca" target="_blank">elina.gilbert@utoronto.ca</a><br>
+                Regular Office Hour: Tuesday 1pm to 3pm
+            </div>
+            <img class="ta-photo" src="{{ url_for('static',filename = 'images/Damon.jpg') }}">
+            <div class="ta-info">
+                <b>Damon Salvatore</b><br>
+                Teaching Assistant<br>
+                Email: <a href="mailto: anna.bretscher@utoronto.ca" target="_blank">damon.salvatore@utoronto.ca</a><br>
+                Regular Office Hour: Mon 4pm to 6pm
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <br/><br/><br/>
+
+
+    <footer class ="footer">
+        <div>
+            
+		    <a href='http://www.utsc.utoronto.ca/cms/faculty-of-computer-science'>Faculty of Computer Science at UofT</a>
+		    <p>Site designed by Du Han, Yanjia Gong and Yujie Li</p>
+        </div>  
+	</footer>
+
+</body>
+</html>

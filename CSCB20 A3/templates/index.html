@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>CSCB63 homepage</title>
+        <meta name ="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'css/template.css') }}">
+    </head>
+
+<body>
+    <div class="container_heading">
+        <div id="header">
+            <h6 align="Right"><a class = "out" href="{{url_for('logout')}}">Logout</a></h6>
+            {% if role == 0 %}
+            <H1 align="center">Hi, Student {{name}}, Welcome CSCB63</H1>
+		    {% else %}
+			<H1 align="center">Hi, Instructor {{name}}, Welcome CSCB63</H1>
+		    {% endif %}
+            <img src="{{ url_for('static',filename = 'images/university-of-toronto-scarborough.jpg') }}" align="left", height="60" >
+            <h5></h5>
+            
+        </div>
+
+        <div class="container_contents">
+            
+			<ul>
+				<li><a class = "menu" href="{{url_for('index')}}" >HOME</button></a></li>
+				<li><a class = "menu" href="https://piazza.com/utoronto.ca/winter2017/cscb20">PIAZZA</a></li>				
+				<li><a class = "menu" href="https://markus.utsc.utoronto.ca/cscb20w21">MARKUS</a></li>
+                <li><a class = "menu" href="{{url_for('assignment')}}">ASSIGNMENTS</a></li>
+                {% if role == 0 %}
+                <li><a class = "menu" href="{{url_for('anonymousfeedback')}}">ANONYMOUS FEEDBACK</a></li>
+                {% else %}
+                <li><a class = "menu" href="{{url_for('reviewfeedback')}}">REVIEW FEEDBACK </a></li>
+                {% endif %}
+                <li><a class = "menu" href="{{url_for('syllabus')}}">SYLLABUS</a></li>
+				<li><a class = "menu" href="{{url_for('labs')}}">LABS</a></li>
+				<li><a class = "menu" href="{{url_for('courseteam')}}">COURSETEAM</a></li>
+                {% if role == 1 %}
+                <li><a class = "menu" href="{{url_for('instructorgrades')}}">GRADES</a></li>
+                <li><a class = "menu" href="{{url_for('viewremarks')}}">REMARKREQUEST</a></li>
+                {% else %}
+                <li><a class = "menu" href="{{url_for('studentgrades')}}"> {{name}}'s GRADES</a></li>
+                {% endif %}
+			</ul>
+              
+		</div>
+	</div>
+    {% block content %}
+    <div class="home">
+        
+        
+        <br/><br/>
+        <h1 align="center">Essentials</h1>
+    
+		
+		<h2><i>Course Description</i></h2>
+        <hr>
+        <section class = "section">
+        <p>Design, analysis, implementation and comparison of efficient data structures for common abstract data types. Priority queues: heaps and mergeable heaps. Dictionaries: balanced binary search trees, B-trees, hashing. Amortization: data structures for managing dynamic tables and disjoint sets. Data structures for representing graphs. Graph searches.</p>
+        <p>
+            <b><i>Exclusion</b></i> CSC263H, CSC265H, (CSCC78H)
+        </p>
+        <p><b><i>Prerequisite</b></i> CSCB36H or (CSCB38H) & [CGPA 2.75 or enrolment in a CSC subject POSt]
+        </p>
+        <p><b>Syllabus</b> <a class="grabbing" href="{{url_for('syllabus')}}">IMPORTANT!</a></p>
+        </section>  
+
+        
+        <h2><i>Instructor</i></h2>
+        <hr>
+			<p><b><i>	Anna Bretscher</b></i> </p>
+			<p><b><i>Email:</b></i> <a href="mailto: anna.bretscher@utoronto.ca" target="_blank">anna.bretscher@utoronto.ca</a ></p>
+            <p><b><i>Lectures: </b></i>Mondays 11:00-12:30 & Friday 10:40-11:30</p>
+            <p><b><i>Office Hours: </b></i> Mon 11am to 1pm & Fri 3pm to 6pm</p>
+			
+        <h2><i>Timetable</i></h2>
+        <hr>
+        <b>Lecture</b>
+        <P>Wednesdays 3-4pm <a class="grabbing" href="https://utoronto.zoom.us/j/89553548645" target="_blank">Zoom Link</a>, Thursdays 9:10-11:00 <a class="grabbing" href="https://utoronto.zoom.us/j/83378932991" target="blank">Zoom Link</a></P>
+        <b>Office hours</b>
+        <p>Usually Mondays 11:00-12:30, Friday 10:40-11:30. Please see the <a class ="grabbing" href= "{{url_for('calendar')}}"  > Calendar</a> for weekly changes.</p>
+        
+    </div>
+    {% endblock %}
+    <br/><br/><br/>
+    <footer class ="footer">
+        <div>  
+		    <a href='http://www.utsc.utoronto.ca/cms/faculty-of-computer-science'>Faculty of Computer Science at UofT</a>
+		    <p>Site designed by Du Han and Yanjia Gong and Yujie Li</p>
+        </div>  
+	</footer>
+</body>
+</html>

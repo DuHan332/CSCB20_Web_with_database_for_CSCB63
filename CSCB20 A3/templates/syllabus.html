@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"> 
+    <head>
+        <title>CSCB63 syllabus</title>
+        <meta name ="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'css/template.css') }}">
+</head>
+
+<body>
+    {% extends "index.html" %}
+    {% block content %}
+    <div class="syllabus">
+        <h2>CSCB63: Design and Analysis of Data Structures</h2>
+        <br/>
+        <h3>Instructor</h3>
+        <hr>
+        <h4>Dr. Anna Bretscher</h4>
+        <p><i>Email:</i> <a href="mailto: anna.bretscher@utoronto.ca" target="_blank">anna.bretscher@utoronto.ca</a ></p>
+        <p><i>Office:</i> IC493</p>
+        <br/>
+
+        <h3>Topics</h3>
+        <hr>
+        <br/>
+        <li>Worst Case Complexity</li>
+        <li>Balanced Search Trees </li>
+        <li>Graphs and Graph Traversals</li>
+        <li>Priority Queues and Heaps</li>
+        <li>Disjoint Sets</li>
+        <li>Amortizes Complexity</li>
+        <li>Average Case Analysis</li>
+        <li>Hashing</li>
+        <br/>
+
+        <h3>Evaluation</h3>
+        <hr>
+        <p>Assignments</p>
+            <li>4 each worth 5% for a total of 20% </li>
+            <li>Basic Understanding questions</li>
+            <li>More challenging questions</li>
+            <br>
+        <p>Term Tests</p>
+            <li>60 mins each held in lectures</li>
+            <li>Worth 15%,15%,15%</li>
+            <li>Test 1 covers A1, Test 2 covers A2, Test 3 covers A3</li>
+            <br>
+        <p>Final Exam</p>
+            <li>Worth 35%</li>
+            <li>Cumulative</li>
+        <br/>
+
+        <h3>Textbook</h3>
+        <hr>
+        <p>Algorithm Design: Foundations, Analysis, and Internet Examples.</p>
+        <b>Michael Goodrich and Roberto Tamassia, John Wiley & Sons (2002)</b>
+        <br/><br/>
+
+        <h3>Resources</h3>
+        <hr>
+        <li><a class="grabbing" href="https://piazza.com/utoronto.ca/winter2017/cscb20">PIAZZA</a></li>
+        <li><a class="grabbing" href="{{url_for('index')}}" >Course Website</a></li>
+        <li>Office Hours: Mon 11am to 1pm & Fri 3pm to 6pm</li>
+        <br/>
+        
+    </div>
+    {% endblock %}
+    <br/><br/><br/>
+
+
+    <footer class ="footer">
+        <div>
+		    <a href='http://www.utsc.utoronto.ca/cms/faculty-of-computer-science'>Faculty of Computer Science at UofT</a>
+		    <p>Site designed by Du Han, Yanjia Gong and Yujie Li</p>
+        </div>  
+	</footer>
+
+</body>
+</html>

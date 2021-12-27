@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>CSCB63 reviewfeedback</title>
+    <meta name ="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'css/template.css') }}">
+  </head>
+<body>
+    {% extends "index.html" %}
+    {% block content %}
+    <div class = "review">
+        <h1>Feedback</h1>
+	    {% for element in result %}
+        <hr>
+	    <h2>{{element[0]}}</h2>
+	    <h2>{{element[1]}}</h2>
+	    <h2>{{element[2]}}</h2>
+	    <h2>{{element[3]}}</h2>
+	    {% endfor %}
+    </div>  
+    {% endblock %}
+</body>
+
+</html>

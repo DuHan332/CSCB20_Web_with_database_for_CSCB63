@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CSCB63 grade</title>
+    <meta name ="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'css/template.css') }}">
+  </head>
+  <body>
+    {% extends "index.html" %}
+    {% block content %}
+    <div class="allgrades">
+        <div class = "sgrid-container">
+            <div class ="gtitle">
+                <h3> User name</h3>
+            </div>
+            <div class="gtitle">
+                <h3>A1</h3>
+            </div>
+            <div class="gtitle">
+                <h3>A2</h3>
+            </div>
+            <div class="gtitle">
+                <h3>A3</h3>
+            </div>
+            <div class="gtitle">
+                <h3>A4</h3>
+            </div>
+            <div class="gtitle">
+                <h3>TT1</h3>
+            </div>
+            <div class="gtitle">
+                <h3>TT2</h3>
+            </div>
+            <div class="gtitle">
+                <h3>TT3</h3>
+            </div>
+            <div class="gtitle">
+                <h3>Final</h3>
+            </div>
+            <div class="Grades" >
+                <form action = "/studentgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="username"disabled="disabled" value="{{result[0]}}">
+                    </div>
+            </form>
+            </div>
+            <div class="Grades" >
+                <form action = "/studentgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="name"disabled="disabled" value="{{result[1]}}">
+                    </div>
+            </form>
+            </div>
+            <div class="Grades" >
+                <form action = "/studentgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="a1"disabled="disabled" value="{{result[2]}}">
+                    </div>
+            </form>
+            </div>
+            <div class="Grades" >
+                <form action = "/studentgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="a2"disabled="disabled" value="{{result[3]}}">
+                    </div>
+            </form>
+            </div>
+            <div class="Grades" >
+                <form action = "/studentgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="a3"disabled="disabled" value="{{result[4]}}">
+                    </div>
+            </form>
+            </div>
+            <div class="Grades" >
+                <form action = "/studentgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="a4"disabled="disabled" value="{{result[5]}}">
+                    </div>
+            </form>
+            </div>
+            <div class="Grades" >
+                <form action = "/studentgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="tt1"disabled="disabled" value="{{result[6]}}">
+                    </div>
+            </form>
+            </div>
+            <div class="Grades" >
+                <form action = "/studentgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="tt2"disabled="disabled" value="{{result[7]}}">
+                    </div>
+            </form>
+            </div>
+            <div class="Grades" >
+                <form action = "/studentgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="tt3"disabled="disabled" value="{{result[8]}}">
+                    </div>
+            </form>
+            </div>
+      </div>
+      <h1>Remark Request</h1>
+        <div class = "gradeeditor">
+      <form method="post" onsubmit="return sumbit_sure()">
+        <p>Project: <select name="project">
+						<option value="assignment1">assignment1</option>
+						<option value="assignment2">assignment2</option>
+						<option value="assignment3">assignment3</option>
+						<option value="assignment4">assignment4</option>
+						<option value="termtest1">termtest1</option>
+						<option value="termtest2">termtest2</option>
+						<option value="termtest3">termtest3</option>
+						<option value="finalexam">finalexam</option>
+                    </select>
+        <p>Reason: <input type=text name=reason><br>
+        <input id = "button" type=submit value=Submit>
+        <script src = "../static/js/javascript.js">
+        </script>
+        </form>
+        </div>
+      {% endblock %}
+  </body>
+</html>
+
+<script language="javascript">
+	function sumbit_sure(){
+	var gnl=confirm("Are you sure you want to submit this request?");
+	if (gnl==true){
+		return true;
+		}
+		else{
+			return false;
+		}
+	}
+</script>

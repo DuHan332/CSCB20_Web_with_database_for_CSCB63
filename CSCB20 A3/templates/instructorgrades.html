@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CSCB63 grade</title>
+    <meta name ="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'css/template.css') }}">
+  </head>
+  <body>
+    {% extends "index.html" %}
+    {% block content %}
+    <div class="allgrades">
+        <div class = "ggrid-container">
+            <div class ="gtitle">
+                <h3> User name</h3>
+            </div>
+            <div class="gtitle">
+                <h3>Name</h3>
+            </div>
+            <div class="gtitle">
+                <h3>A1</h3>
+            </div>
+            <div class="gtitle">
+                <h3>A2</h3>
+            </div>
+            <div class="gtitle">
+                <h3>A3</h3>
+            </div>
+            <div class="gtitle">
+                <h3>A4</h3>
+            </div>
+            <div class="gtitle">
+                <h3>TT1</h3>
+            </div>
+            <div class="gtitle">
+                <h3>TT2</h3>
+            </div>
+            <div class="gtitle">
+                <h3>TT3</h3>
+            </div>
+            <div class="gtitle">
+                <h3>Final</h3>
+            </div>
+            <div class="Grades" >
+            {% for student in result %}
+            <form action = "/instructorgrades" method = "post">
+                <div class="grades">
+                    <input type = "text" name="username"disabled="disabled" value="{{student[0]}}">
+                </div>
+            </form>
+            {%  endfor %}
+            </div>
+            <div class="Grades" >
+            {% for student in result %}
+            <form action = "/instructorgrades" method = "post">
+                <div class="grades">
+                    <input type = "text" name="name" disabled="disabled" value="{{student[1]}}">
+                </div>
+            </form>
+            {%  endfor %}
+            </div>
+            <div class="Grades" >
+                {% for student in result %}
+                <form action = "/instructorgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="A1" disabled="disabled" value="{{student[2]}}">
+                    </div>
+                </form>
+                {%  endfor %}
+            </div>
+            <div class="Grades" >
+                {% for student in result %}
+                <form action = "/instructorgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="A2" disabled="disabled" value="{{student[3]}}">
+                    </div>
+                </form>
+                {%  endfor %}
+            </div>
+            <div class="Grades" >
+                {% for student in result %}
+                <form action = "/instructorgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="A3" disabled="disabled"  value="{{student[4]}}">
+                    </div>
+                </form>
+                {%  endfor %}
+            </div>
+            <div class="Grades" >
+                {% for student in result %}
+                <form action = "/instructorgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="A4" disabled="disabled" value="{{student[5]}}">
+                    </div>
+                </form>
+                {%  endfor %}
+            </div>
+            <div class="Grades" >
+                {% for student in result %}
+                <form action = "/instructorgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="tt1" disabled="disabled" value="{{student[6]}}">
+                    </div>
+                </form>
+                {%  endfor %}
+            </div> 
+            <div class="Grades" >
+                {% for student in result %}
+                <form action = "/instructorgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="tt2" disabled="disabled" value="{{student[7]}}">
+                    </div>
+                </form>
+                {%  endfor %}
+            </div>   
+            <div class="Grades" >
+                {% for student in result %}
+                <form action = "/instructorgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="tt3" disabled="disabled" value="{{student[8]}}">
+                    </div>
+                </form>
+                {%  endfor %}
+            </div>
+            <div class="Grades" >
+                {% for student in result %}
+                <form action = "/instructorgrades" method = "post">
+                    <div class="grades">
+                        <input type = "text" name="final" disabled="disabled"  value="{{student[9]}}">
+                    </div>
+                </form>
+                {%  endfor %}
+            </div>
+
+        </div>
+        <h1>Grade Editor</h1>
+        <div class = "gradeeditor">
+            <form method="post" onsubmit="return sumbit_sure()">
+            <p>StudentID: <input type=text name=id><br>
+            <p>New Mark: <input type=text name=newmark><br>
+            <p>Project: <select name="project">
+                <option value="assignment1">assignment1</option>
+                <option value="assignment2">assignment2</option>
+                <option value="assignment3">assignment3</option>
+                <option value="assignment4">assignment4</option>
+                <option value="termtest1">termtest1</option>
+                <option value="termtest2">termtest2</option>
+                <option value="termtest3">termtest3</option>
+                <option value="finalexam">finalexam</option>
+            </select></p>
+            <input id = "button" type=submit value=Submit>
+            <script src = "../static/js/javascript.js">
+            </script>
+            </form>
+        </div>
+
+      </div>
+    {% endblock %}
+    <br/><br/><br/>
+    <footer class ="footer">
+        <div>  
+		    <a href='http://www.utsc.utoronto.ca/cms/faculty-of-computer-science'>Faculty of Computer Science at UofT</a>
+		    <p>Site designed by Du Han and Yanjia Gong and Yujie Li</p>
+        </div>  
+	</footer>
+  </body>
+</html>
+

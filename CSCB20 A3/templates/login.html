@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+        <title>CSCB63 login</title>
+        <meta name ="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'css/template.css') }}">
+  </head>
+<body>
+    <div id="login-box">
+        <h1>Welcome to CSCB63</h1>
+        <div class =" form">
+        <form class="form" method = 'POST'>
+            <div class="item">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <input type="text" placeholder="Username" name = 'username'>
+            </div>
+            <div class="item">
+                <i class="fa fa-key" aria-hidden="true"></i>
+                <input type="password" placeholder="Password" name = 'password'>
+            </div>
+                <li><input id ='button' type=submit value=Login></li>
+                <li><input type=button id ='button' onclick="window.location.href ='{{url_for('signup')}}'" value = 'Signup'></li>
+        </form>
+        </div>  
+    </div>
+
+    <footer class ="footer">
+        <div>  
+		    <a href='http://www.utsc.utoronto.ca/cms/faculty-of-computer-science'>Faculty of Computer Science at UofT</a>
+		    <p>Site designed by Du Han and Yanjia Gong and Yujie Li</p>
+        </div>  
+	</footer>
+
+</body>
+
+</html>

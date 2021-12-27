@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>CSCB63 viewmark</title>
+    <meta name ="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'css/template.css') }}">
+  </head>
+<body>
+    {% extends "index.html" %}
+    {% block content %}
+    <div class="Remarks">
+        <div class = "vgrid-container">
+            <div class ="vtitle">
+                <h3>User name</h3>
+            </div>
+            <div class="vtitle">
+                <h3>Name</h3>
+            </div>
+            <div class="vtitle">
+                <h3>Project</h3>
+            </div>
+            <div class="vtitle">
+                <h3>Reason</h3>
+            </div>
+            {% for element in result %}
+                <div class="grades">
+                    {{element[0]}}
+                </div>
+                <div class="grades">
+                    {{element[1]}}
+                </div>
+                <div class="grades">
+                    {{element[2]}}
+                </div>
+                <div class="grades">
+                    {{element[3]}}
+                </div>
+            {%  endfor %}
+        </div>
+    </div>
+    {% endblock %}
+
+    <footer class ="footer" >
+        <div>
+		    <a href='http://www.utsc.utoronto.ca/cms/faculty-of-computer-science'>Faculty of Computer Science at UofT</a>
+		    <p>Site designed by Du Han, Yanjia Gong and Yujie Li</p>
+        </div>  
+	</footer>
+
+
+</body>
+
+</html>
